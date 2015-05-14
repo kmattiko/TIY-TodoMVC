@@ -13,23 +13,15 @@
 						//adding (li) to the (ul.todo-list > li) whole list view for user
 			//6. ROBOT: remove the typed (task) from (input.new-todo)
 
+
 var newTodoInput = document.querySelector('input.new-todo');
 
-newTodoInput.addEventListener('keyup', function addTodoController() {
-	if ( event.keyCode === 13) {
-		// FIND A WAY TO MAKE THIS ADD TO LIST!
-		//console.log("sanity-check");
+newTodoInput.addEventListener('keyup', function addTodoController(event) {
+	if ( event.keyCode === 13){
+		var task = document.querySelector('input.new-todo').value;
+		todos.taskList.push(task);
+		console.log(todos.taskList);
 	}
-	//	TO ADD A TASK:
-		// GIVEN: an HTML element <input class= 'new-todo'>
-		// WHEN: the user inputs text and presses the "enter" key
-		// THEN:
-		//1. TODO
-		//2. TODO
-		//3. TODO
-		//4. TODO
-		//5. TODO
-		//6. TODO
 });
 
 })(window);
