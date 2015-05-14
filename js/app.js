@@ -9,13 +9,23 @@
     //Something needs added for the enter key
 		//Will need to be pushed into the Array with the list.
 
+//ENTER needs defined, shows up in orange like it's a number
+//tried pulling JS from original TodoMVC file and applying theories
+//Have yet to get the enter key to work.
+//At least I've gotten past some errors
+
 	document.head.parentElement.className = "js";
 
 	var addTodos = document.querySelector('header')
 
-	addTodos.addEventListener('keypress' == 13, function(){
+	var that = this;
+	this.ENTER_KEY = 13;
+
+	addTodos.addEventListener(this.ENTER_KEY, function view(template){
 		console.log("whatever");
 	})
+
+
 
 /*
 
