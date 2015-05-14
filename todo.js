@@ -1,4 +1,4 @@
-+var expect = require('chai').expect;
++/*var expect = require('chai').expect;
 +//I can list my tasks
 +
 +var taskList = [ ];
@@ -43,4 +43,4 @@
 +
 +expect(normalTodo[0]).to.equal("Remember the milk");
 +expect(highTodo).to.equal("x" + normalTodo[0]);
-+
++*/

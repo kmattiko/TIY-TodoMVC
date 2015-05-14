@@ -1,94 +1,60 @@
-(function (window) {
+(function (window) { //IIFE: Immediatly Invoked Function Expression
 	'use strict';
+//CONTROLLER FOR: I can add a task to list
+//1. What event should I listen for? "keyup" Enter
+//2.What element makes sense to listen for that event? input.new-todo
+//3. What do I need to do when that event fires? See below 6 list items
+		//	TO ADD A TASK:
+			//1. Click on what needs to be done. ('input.new-todo')
+			//2. Type the thing you need to remember (task)
+			//3. Press "Enter" key
+			//4. ROBOT: save the (task) to (taskList) (SO: It can live in an array!)
+			//5. ROBOT: Update the (li) in HTML format (SO: user can see it!)
+						//adding (li) to the (ul.todo-list > li) whole list view for user
+			//6. ROBOT: remove the typed (task) from (input.new-todo)
 
-	// Your starting point. Enjoy the ride!
+var newTodoInput = document.querySelector('input.new-todo');
+
+newTodoInput.addEventListener('keyup', function addTodoController() {
+	if ( event.keyCode === 13) {
+		// FIND A WAY TO MAKE THIS ADD TO LIST!
+		//console.log("sanity-check");
+	}
+	//	TO ADD A TASK:
+		// GIVEN: an HTML element <input class= 'new-todo'>
+		// WHEN: the user inputs text and presses the "enter" key
+		// THEN:
+		//1. TODO
+		//2. TODO
+		//3. TODO
+		//4. TODO
+		//5. TODO
+		//6. TODO
+});
 
 })(window);
 
-//What needs to be done will allow typing but will not allow adding
-    //Something needs added for the enter key
-		//Will need to be pushed into the Array with the list.
 
-//ENTER needs defined, shows up in orange like it's a number
-//tried pulling JS from original TodoMVC file and applying theories
-//Have yet to get the enter key to work.
-//At least I've gotten past some errors
 
-	document.head.parentElement.className = "js";
 
-	var addTodos = document.querySelector('header')
 
-	var that = this;
-	this.ENTER_KEY = 13;
 
-	addTodos.addEventListener(this.ENTER_KEY, function view(template){
-		console.log("whatever");
-	})
+
+
+
 
 
 
 /*
+	document.head.parentElement.className = "js";
 
-			var KeyEvent = {
-				DOM_VK_RETURN: 13,
-			};
-		}
+	document.querySelector('.new-todo')
 
-		addTodos.addEventListener(KeyEvent(13), function(){
-			console.log("whatever");
-		})
+	//var that = this;
+	//this.ENTER_KEY = 13;
 
-		/*
-		function (e) {
-		    var code = check.addEventListener;
-		    //Up arrow pressed
-		    if (code == 13) {
-		        console.log("You pressed the Up arrow key");
-					}
-		    else {
-		        console.log("You pressed some other key I don't really care about.");
-				}
-/*				http://stackoverflow.com/questions/12241113/whats-the-best-way-to-create-key-events-in-html5-canvas*/
+	('.new-todo').addEventListener('keyCode.keyup', function (){
+		console.log(arguments);
+	});
 
-
-/*document.head.parentElement.className = "js";
-
-var addTodos = document.querySelector('header')
-
-addTodos.addEventListener('keydown', function(){
-	console.log("whatever");
-})
-
-// function (addTodos.addEventListener)
-// 	if (e.keyCode == 13) {
-// 		(this).appendTo('view');
-// 	};
-
-
-/*function(addTodos, index, addTodos) {
-	addTodos.addEventListener(e.keyCode == 13);
-	(this).appendTo('view');
-};
-
-/*(".like-button").click(function() {
-		 (this).toggle("active");
-		  });
-		};
-		(document).ready(addTodos);
-		var elements = document.querySelectorAll('h3');
-
-_.forEach(elements, function(element, index, elements){
-    element.addEventListener('click', function(){
-        console.log(elements, index, element);
-        element.parentElement.classList.toggle('cbp-ntopen');
-    });
-});
-
-function runScript(e) {
-    if (e.keyCode == 13) {
-        var tb = document.getElementById("scriptBox");
-        eval(tb.value);
-        return false;
-    }
-}
 */
