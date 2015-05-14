@@ -20,6 +20,10 @@ newTodoInput.addEventListener('keyup', function addTodoController(event) {
 	if ( event.keyCode === 13){
 		var task = document.querySelector('input.new-todo').value;
 		todos.taskList.push(task);
+		document.querySelector('input.new-todo').value = "";
+//		function clear(){
+//			document.querySlector('input.new-todo').value = "";
+//		};
 		console.log(todos.taskList);
 	}
 });
