@@ -14,19 +14,54 @@
 			//6. ROBOT: remove the typed (task) from (input.new-todo)
 
 
-var newTodoInput = document.querySelector('input.new-todo');
+var newTodoInput = document.querySelector('input.new-todo')
 
 newTodoInput.addEventListener('keyup', function addTodoController(event) {
 	if ( event.keyCode === 13){
-		var task = document.querySelector('input.new-todo').value;
-		todos.taskList.push(task);
-		document.querySelector('input.new-todo').value = "";
-//		function clear(){
-//			document.querySlector('input.new-todo').value = "";
-//		};
+
+//var task = document.querySelector('input.new-todo').value;
+	//	todos.taskList.push(task);
+
+	//	document.querySelector('ul.todo-list').textContent = todos.taskList;
+	//	document.querySelector('input.new-todo').value = "";
+
+	//	if (todos.tasklist.length === 1) {
+	//		document.querySelector('span.todo-count').textContent = (todo.taskList.length +" "+ 'Item Left');
+	//	} else {
+	//		document.querySelector('span.todo-count').textContent = (todos.taskList.Length +" "+ 'Items Left');
+	//	};
+
 		console.log(todos.taskList);
 	}
-});
+	});
+
+
+	var deleteTask = document.querySelector('ul.todo-list');
+
+	deleteTask.addEventListener('mouseover', function() {
+		console.log("hello");
+	});
+
+
+	var deleteTaskButtons = document.querySelectorAll('buttons.destroy');
+
+	_.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons){
+		element.addEventListener('click', function(){
+			console.log("clicky");
+		});
+	});
+
+
+	var editTask = document.querySelectorAll('li');
+
+	_.forEach(editTask, function(element, index, editTask){
+		element.addEventListener('dblclick', function(){
+			console.log("Click All")
+		});
+	});
+
+
+})(window);
 
 
 //REMOVE A TASK:
@@ -37,36 +72,3 @@ newTodoInput.addEventListener('keyup', function addTodoController(event) {
 	//Click event
 	//In the (li) on the 'x' button
 	//Remove text from box
-
-	var deleteTask = document.querySelector('ul.todo-list');
-
-	deleteTask.addEventListener('mouseover', function() {
-		console.log("hello");
-	});
-
-})(window);
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-	document.head.parentElement.className = "js";
-
-	document.querySelector('.new-todo')
-
-	//var that = this;
-	//this.ENTER_KEY = 13;
-
-	('.new-todo').addEventListener('keyCode.keyup', function (){
-		console.log(arguments);
-	});
-
-*/
