@@ -28,6 +28,22 @@ newTodoInput.addEventListener('keyup', function addTodoController(event) {
 	}
 });
 
+
+//REMOVE A TASK:
+	//Mouseover event to get the 'x'
+	//Listen for when mouseover is in (ul.todo-lis > li) section
+	//Show the 'x'
+
+	//Click event
+	//In the (li) on the 'x' button
+	//Remove text from box
+
+	var deleteTask = document.querySelector('ul.todo-list');
+
+	deleteTask.addEventListener('mouseover', function() {
+		console.log("hello");
+	});
+
 })(window);
 
 
