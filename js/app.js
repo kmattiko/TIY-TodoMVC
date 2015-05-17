@@ -13,54 +13,79 @@
 						//adding (li) to the (ul.todo-list > li) whole list view for user
 			//6. ROBOT: remove the typed (task) from (input.new-todo)
 
-
-var newTodoInput = document.querySelector('input.new-todo')
+var newTodoInput = document.querySelector('input.new-todo');
+var deleteButtons = document.querySelectorAll('button.destroy');
+var editTask = document.querySelectorAll('li');
+var deleteTask = document.querySelector('ul.todo-list');
 
 newTodoInput.addEventListener('keyup', function addTodoController(event) {
-	if ( event.keyCode === 13){
+	if ( event.keyCode !== 13) return;
 
-//var task = document.querySelector('input.new-todo').value;
-	//	todos.taskList.push(task);
+		var task = newTodoInput.value;
 
-	//	document.querySelector('ul.todo-list').textContent = todos.taskList;
-	//	document.querySelector('input.new-todo').value = "";
+	var todoCountElement = document.querySelector('span.todo-count');
 
-	//	if (todos.tasklist.length === 1) {
-	//		document.querySelector('span.todo-count').textContent = (todo.taskList.length +" "+ 'Item Left');
-	//	} else {
-	//		document.querySelector('span.todo-count').textContent = (todos.taskList.Length +" "+ 'Items Left');
-	//	};
+		todos.addTaskToList(task, todos.taskList);
 
-		console.log(todos.taskList);
-	}
-	});
+		newTodoInput.value = "";
 
+	{
+	var todoCountText = todos.taskList.length + 'Item';
 
-	var deleteTask = document.querySelector('ul.todo-list');
+	if (todos.taskList.length === 1) {
+		todoCountText  += 'left';
+	} else {
+		todoCountText += 's Left';
+	};
+};
+
+	todoCountElement.text = todoCountText;
+	//TODO add a <li> representation of 'task'
+
+	document.querySelector('ul.todo-list').innerHTML +=
+	(
+		"<li> Hello Clarise:" + task +
+		"</li>"
+	);
+
+	console.log(todos.taskList);
+	console.log(todos.taskList.length);
 
 	deleteTask.addEventListener('mouseover', function() {
 		console.log("hello");
 	});
 
+//var task = document.querySelector('input.new-todo').value;
+	//	todos.taskList.push(task);
+	//	document.querySelector('ul.todo-list').textContent = todos.taskList;
+	//	document.querySelector('input.new-todo').value = "";
+	//	if (todos.tasklist.length === 1) {
+	//		document.querySelector('span.todo-count').textContent = (todo.taskList.length +" "+ 'Item Left');
+	//	} else {
+	//		document.querySelector('span.todo-count').textContent = (todos.taskList.Length +" "+ 'Items Left');
+	//	};
+	//var deleteTask = document.querySelector('ul.todo-list');
+	//deleteTask.addEventListener('mouseover', function() {
+		//console.log("hello");
+	//});
 
-	var deleteTaskButtons = document.querySelectorAll('buttons.destroy');
 
-	_.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons){
+_.forEach(deleteTaskButtons, function(element, index, deleteButtons) {
 		element.addEventListener('click', function(){
 			console.log("clicky");
 		});
 	});
 
-
-	var editTask = document.querySelectorAll('li');
-
-	_.forEach(editTask, function(element, index, editTask){
-		element.addEventListener('dblclick', function(){
+_.forEach(editTask, function(element, index, editTask) {
+		element.addEventListener('dblclick', function() {
 			console.log("Click All")
 		});
 	});
 
+//todos.addTaskToList=
+document.querySlector('ul.todo-list > li').textContent
 
+});
 })(window);
 
 
